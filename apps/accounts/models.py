@@ -28,7 +28,10 @@ class User(AbstractUser):
         session = vk.Session()
         vkapi = vk.API(session, v='5.35')
         freinds = vkapi.friends.get(access_token=self.token, fields='domain', count=5, order='random')
-        #freinds = json.dumps(freinds)
         f = freinds['items']
-        return f
+        a ='5 Случайных друзей: '
+        for b in range(5):
+            c = f[b]
+            a = a + c['last_name'] +' '+ c['first_name']+', '
+        return a
 
