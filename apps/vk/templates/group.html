@@ -1,0 +1,15 @@
+<style type="text/css">
+	.border {
+		border: 1px solid black;
+	}
+</style>
+{% for post in group.posts.all %}
+	<div class="border">
+		{{post.text}}
+		<p>Ссылку на пост: {{post.link}}</p>
+		<p>Количество комментариев: {{post.comment_count}}</p>
+		<p>Количество просмотров: {{post.views_count}}</p>
+		<p>Количество лайков: {{post.likes_count}}</p>
+		<p>Количество репостов: {{post.repost_count}}</p>
+	</div>
+{% endfor %}

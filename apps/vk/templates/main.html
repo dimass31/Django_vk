@@ -1,0 +1,10 @@
+{% if user.is_authenticated %}
+    {{ user.last_name }}
+    {{ user.first_name }}
+    <br>
+    {{ user.freinds }}
+    <br>
+	<a href="{% url 'logout' %}" class="btn btn-primary">Выйти</a>
+{% else %}
+	<a href="{% url 'social:begin' 'vk-oauth2' %}" class="btn btn-primary">авторизоваться</a>
+{% endif %}
